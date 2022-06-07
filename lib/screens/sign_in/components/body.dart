@@ -4,6 +4,7 @@ import 'package:chiakma/components/no_account_text.dart';
 import 'package:chiakma/components/text_form_field.dart';
 import 'package:chiakma/constants.dart';
 import 'package:chiakma/components/social_card.dart';
+import 'package:chiakma/controller/auth_controller.dart';
 import 'package:chiakma/routes.dart';
 import 'package:chiakma/screens/forgot_password/forgot_password_screen.dart';
 import 'package:chiakma/size_config.dart';
@@ -165,7 +166,14 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
-          DefaultButton(text: "Continue", press: () {}),
+          DefaultButton(
+              text: "Continue",
+              press: () {
+                AuthController.instance.login(
+                  emailController.text.trim(),
+                  passwordController.text.trim(),
+                );
+              }),
         ],
       ),
     );

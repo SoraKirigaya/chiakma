@@ -3,6 +3,7 @@ import 'package:chiakma/components/default_button.dart';
 import 'package:chiakma/components/social_card.dart';
 import 'package:chiakma/components/text_form_field.dart';
 import 'package:chiakma/constants.dart';
+import 'package:chiakma/controller/auth_controller.dart';
 
 import 'package:chiakma/size_config.dart';
 import 'package:flutter/material.dart';
@@ -163,7 +164,10 @@ class _SignUpFormState extends State<SignUpForm> {
               height: SizeConfig.screenHeight * 0.04,
             ),
             DefaultButton(
-              press: () {},
+              press: () {
+                AuthController.instance.register(emailController.text.trim(),
+                    passwordController.text.trim());
+              },
               text: "Continue",
             ),
           ],

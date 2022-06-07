@@ -22,6 +22,7 @@ class HomePageScreen extends StatelessWidget {
               Get.toNamed(Routes.signin);
             }),
       ),
+      body: Body(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: [
